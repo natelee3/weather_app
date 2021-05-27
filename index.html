@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel='icon' href="weather.png">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        button#getWeatherinfo {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Atlanta Weather Update</h1>
+    <p>Click below for the latest weather updates</p>
+    <button id="getWeatherInfo" type="button">Get weather info</button>
+    <p>Right now- <span id="description"></span>, feels like <span id="temp"></span></p>
+    <p>The current humidity is <span id="humidity"></span> percent.</p>
+</body>
+<script src='scripts.js'></script>
+</html>
