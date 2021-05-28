@@ -1,6 +1,6 @@
 'use strict';
 
-const apiKey = 'de4fcf6028dfe9ccf2513aa919b22358'
+const apiKey = ''
 const generateWeather = document.getElementById('generateWeather');
 
 generateWeather.addEventListener('click', function() {
@@ -26,7 +26,7 @@ function getWeatherInfo (city, state) {
     .then(data => {
         updateWeather(data.main.feels_like, data.weather[0].description, data.main.temp_max, data.main.temp_min, data.main.humidity)
     })
-    .catch(error => console.log("error"))
+    .catch(error => console.log("Please add your API key"))
 };
 
 function updateWeather(currentTemp, currentConditions, todayHigh, todayLow, currentHumidity) {
