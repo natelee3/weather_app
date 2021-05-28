@@ -10,17 +10,33 @@
         h1 {
             text-align: center;
         }
-        button#getWeatherinfo {
-            background-color: white;
+        section {
+            visibility: visible;
         }
     </style>
 </head>
 <body>
-    <h1>Atlanta Weather Update</h1>
-    <p>Click below for the latest weather updates</p>
-    <button id="getWeatherInfo" type="button">Get weather info</button>
-    <p>Right now- <span id="description"></span>, feels like <span id="temp"></span></p>
-    <p>The current humidity is <span id="humidity"></span> percent.</p>
+    <h1>Current Weather:</h1>
+    <form id='inputForm'>
+        <p><label>City:
+            <input type="text" name="city" id="city" placeholder="Please enter the city"/>
+        </label></p>
+    <button id="generateWeather" type="button">Get weather info</button>
+    </form>
+    <section id="weatherReport">
+        <h3>Local conditions for: <span id="placeholder"></span> 
+        </h3>
+        <p>Current Temperature feels like:</p>
+        <div id="currentTemp"></div>
+        <p>Current Conditions:</p>
+        <div id="currentConditions"></div>
+        <p>Today's High:</p>
+        <div id="todayHigh"></div>
+        <p>Today's Low:</p>
+        <div id="todayLow"></div>
+        <p>Humidity:</p>
+        <div id="currentHumidity"></div>
+    </section>
 </body>
 <script src='scripts.js'></script>
 </html>
