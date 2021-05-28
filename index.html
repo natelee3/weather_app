@@ -21,10 +21,13 @@
         <p><label>City:
             <input type="text" name="city" id="city" placeholder="Please enter the city"/>
         </label></p>
+        <p><label>State: 
+            <input type="text" name="city" id="city" placeholder="Please enter the state code"/>
+        </label></p>
     <button id="generateWeather" type="button">Get weather info</button>
     </form>
     <section id="weatherReport">
-        <h3>Local conditions for: <span id="placeholder"></span> 
+        <h3>Local conditions for: <span id="cityPlaceholder"></span>, <span id="statePlaceholder"></span>. 
         </h3>
         <p>Current Temperature feels like:</p>
         <div id="currentTemp"></div>

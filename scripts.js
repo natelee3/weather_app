@@ -5,18 +5,26 @@ const generateWeather = document.getElementById('generateWeather');
 
 
 generateWeather.addEventListener('click', function() {
-    const inputElement = document.querySelector('input');
-    const placeholderElement = document.querySelector('span');
+    const inputElements = document.querySelectorAll('input');
+    const placeholders = document.querySelectorAll('span');
     
-    placeholderElement.innerHTML = inputElement.value
-    getWeatherInfo(inputElement.value);
+    let inputArray = []
+    inputElements.forEach(inputElement => {
+        inputArray.push(inputElement);
+    })
+    
+    placeholders.forEach(function(placeholder, index) {
+        placeholder.innerHTML = inputArray[index].value;
+        getWeatherInfo(inputArray[0].value, inputArray[1].value);
+
+    })
 });   
-function getWeatherInfo (city) {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=de4fcf6028dfe9ccf2513aa919b22358`
+
+function getWeatherInfo (city, state) {
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${state},usa&units=imperial&appid=${apiKey}`
     
     fetch(url).then(response => response.json())
     .then(data => {
-        console.log(data.main.humidity)
         updateWeather(data.main.feels_like, data.weather[0].description, data.main.temp_max, data.main.temp_min, data.main.humidity)
     })
     .catch(error => console.log("error"))
