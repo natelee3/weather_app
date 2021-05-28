@@ -3,7 +3,6 @@
 const apiKey = 'de4fcf6028dfe9ccf2513aa919b22358'
 const generateWeather = document.getElementById('generateWeather');
 
-
 generateWeather.addEventListener('click', function() {
     const inputElements = document.querySelectorAll('input');
     const placeholders = document.querySelectorAll('span');
@@ -32,14 +31,14 @@ function getWeatherInfo (city, state) {
 
 function updateWeather(currentTemp, currentConditions, todayHigh, todayLow, currentHumidity) {
     const div1 = document.querySelector('#currentTemp');
-    div1.innerHTML = (currentTemp).toFixed(1);
+    div1.innerHTML = (currentTemp).toFixed(1) + "°F";
     const div2 = document.querySelector('#currentConditions')
     div2.innerHTML = currentConditions;
     const div3 = document.querySelector('#todayHigh');
-    div3.innerHTML = todayHigh.toFixed(1);
+    div3.innerHTML = todayHigh.toFixed(1) + "°F";
     const div4 = document.querySelector('#todayLow');
-    div4.innerHTML = todayLow.toFixed(1);
+    div4.innerHTML = todayLow.toFixed(1) + "°F";
     const div5 = document.querySelector('#currentHumidity');
-    div5.innerHTML = currentHumidity;
+    div5.innerHTML = currentHumidity + "%";
 }
 
